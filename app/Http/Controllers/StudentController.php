@@ -20,13 +20,7 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-       $request-> validate([
-        'Student_ID' =>'required|unique:table,column,except,id',
-        'Student_Name' =>'required',
-        'Email' =>'required|unique:table,column,except,id',
-        'Session' =>'required'
-
-       ]);
+       
 
         $student = new Student;
 
@@ -48,11 +42,7 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
 
-        $request-> validate([
-            'Student_ID' =>'required',
-            'Email' =>'required'
-    
-           ]);
+        
     
         $student->update([
             'Student_ID' => $request->Student_ID,
